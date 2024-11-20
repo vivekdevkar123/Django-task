@@ -6,8 +6,9 @@
     <title>sign in</title>
 </head>
 <body>
-    {% load socialaccounts %}
-    <h2>google login</h2>
-    <a href="{% provider_login_url 'google' %}?next=/">login with goolge</a>
+    {% load socialaccount %}
+<h2>Google Login</h2>
+<a href="{% provider_login_url 'google' %}?next=/">Login with Google</a>
+
 </body>
 </html>

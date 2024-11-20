@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-SITE_ID = 1
+SITE_ID = 2
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -47,13 +47,17 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
 ]
 
+
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
-            "profile",
-            "email"
+            'profile',
+            'email',
         ],
-        'AUTH_PARAMS':{"access_type":"online"}
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        'OAUTH_PKCE_ENABLED': True,
     }
 }
 
