@@ -5,7 +5,7 @@ from django.contrib.auth import logout
 def home(request):
     try:
         # Your existing code for the home view here
-        return render(request, 'home.html')
+        return render(request, 'login.html')
     except Exception as e:
         print(f"Error: {e}")
         raise

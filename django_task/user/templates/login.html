@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/15.0.0/material-components-web.min.css"
+        rel="stylesheet">
+</head>
+
+<body>
+    {% load socialaccount %}
+    <h2>Google Login</h2>
+
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.first_name }}!</p>
+        <a href="{% url 'account_logout' %}" class="mdc-button mdc-button--raised">
+            <span class="mdc-button__label">Logout</span>
+        </a>
+    {% else %}
+        <a href="{% provider_login_url 'google' %}?next=/" class="mdc-button mdc-button--raised">
+            <span class="mdc-button__label">Login with Google</span>
+        </a>
+    {% endif %}
+
+    <!-- Material Design JavaScript -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/15.0.0/material-components-web.min.js"></script>
+</body>
+
+
+</html>
